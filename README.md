@@ -73,6 +73,20 @@ python inventory.py
 streamlit run app.py
 ```
 
-## Next
+## Analyst agent (Gemini)
 
-Add a Claude-powered analyst agent that answers questions like "which items have the highest stockout risk next month?" using the forecast data.
+`analyst_gemini.py` is a small tool-calling agent built on the Gemini API (free tier). It answers plain-English questions by calling three functions on the saved forecast results: `get_forecast`, `get_top_risk` and `get_policy_summary`.
+
+Example questions:
+
+- Which 5 store-dept series have the highest stockout risk?
+- Show the forecast for store 1 dept 1
+- Which inventory policy is best and what is the trade-off?
+
+To run it: `pip install google-genai`, set `GEMINI_API_KEY` (free key from Google AI Studio), then `python analyst_gemini.py`.
+
+Notes:
+
+- The agent only reads the precomputed holdout results (`data/quantiles.csv`); it does not retrain anything.
+- The risk ranking uses only 7 to 8 holdout weeks per series, so treat it as directional.
+- The model name is set at the top of the file and may need updating when Google retires models.
