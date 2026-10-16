@@ -2,6 +2,8 @@
 
 4-week-ahead demand forecasts with uncertainty ranges for Walmart store-department sales, turned into inventory (safety stock) decisions and compared across ordering policies. Includes a Streamlit dashboard.
 
+**Live demo:** [https://stocksense-7m9kvfmlakdbkc7dnux6vn.streamlit.app](https://stocksense-7m9kvfmlakdbkc7dnux6vn.streamlit.app) (free hosting, so it may take about 30 seconds to wake up)
+
 ![Dashboard](dashboard.png)
 
 ![Reorder table and policy comparison](dashboard2.png)
